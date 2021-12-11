@@ -1,0 +1,43 @@
+// 變數覆蓋需要在導入Bootstrap的Sass檔案之前
+// 參考Bootstrap的 _variables.scss
+$primary: #ffb319;
+$secondary: #ffe194;
+$third: #e8f6ef;
+$four: #b8dfd8; // 導入bootstrap所有的樣式與預設變數
+@import '~bootstrap/scss/bootstrap.scss';
+
+// font Noto Sans TC
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+@import './styles/list.scss';
+
+body {
+	padding: 0;
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans TC', sans-serif;
+}
+// 通用法則
+.cen-cen {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.bet-cen {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.pointer {
+	cursor: pointer;
+}
+.colorFFF {
+	color: #fff;
+}
+nav {
+	background-color: #fff;
+	// padding: 100px;
+}

@@ -1,0 +1,51 @@
+.menu-title {
+	background-color: $third;
+}
+.filter {
+	border: 3px solid #333;
+}
+.keyword {
+	.searchInput {
+		border: transparent;
+		border-bottom: 1px solid #000;
+	}
+}
+.noStyleInButton {
+	background-color: transparent;
+	border: transparent;
+}
+.playersModal {
+	.title {
+		text-align: right;
+	}
+}
+.chart {
+	.title {
+		width: 30%;
+		text-align: right;
+	}
+	.long14 {
+		height: 40px;
+		background-color: #ddd;
+		position: relative;
+		span {
+			position: absolute;
+			right: 10px;
+			color: #fff;
+			top: 8px;
+		}
+	}
+}
+.changeBgc {
+	background-color: $primary;
+	color: #fff;
+}
+.mainList {
+	thead {
+		position: sticky;
+		top: -2px;
+		background-color: $third;
+		color: #000;
+		font-weight: normal;
+	}
+}
