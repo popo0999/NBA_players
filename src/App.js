@@ -15,7 +15,7 @@ const App = () => {
 					<Route exact path="/">
 						<PlayerList data={data} />
 					</Route>
-					<Route exact path="/LnData_task2_ReactJS">
+					<Route exact path="/NBA_players">
 						<PlayerList data={data} />
 					</Route>
 				</Switch>

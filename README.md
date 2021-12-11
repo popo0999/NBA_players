@@ -1,5 +1,7 @@
 demo：https://popo0999.github.io/LnData_task2_ReactJS
 
+由於前份為須繳交的作業，故這邊再重新開一個專案來呈現
+
 說明文件如下：
 項目 |說明內容 |
 -------|-------|
