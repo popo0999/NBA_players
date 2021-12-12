@@ -1,4 +1,4 @@
-demo：https://popo0999.github.io/LnData_task2_ReactJS
+demo：https://popo0999.github.io/NBA_players/
 
 由於前份為須繳交的作業，故這邊再重新開一個專案來呈現
 
