@@ -14,6 +14,7 @@ const List = (props) => {
 		search,
 		whichPage,
 		setTotalRows,
+		setSearch,
 	} = props
 	const [selectedPlayer, setSelectedPlayer] = useState('')
 	const [selectedPlayerData, setSelectedPlayerData] = useState([])
@@ -25,7 +26,7 @@ const List = (props) => {
 	const handleSearch = (data, searchText) => {
 		let newData = []
 
-		if (search && searchText) {
+		if (searchText) {
 			newData = data.filter((v) => {
 				// includes -> String API
 				return v.name.toLowerCase().includes(searchText.toLowerCase())
@@ -33,7 +34,6 @@ const List = (props) => {
 		} else {
 			newData = [...data]
 		}
-
 		return newData
 	}
 	const handleSort = (data, sortBy) => {
@@ -93,7 +93,7 @@ const List = (props) => {
 		newData = handlePage(newData, whichPage)
 		setDisplay(newData)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [searchText, search, selectTeam, sortBy, whichPage])
+	}, [search, selectTeam, sortBy, whichPage])
 
 	// player's Detail資料
 	useEffect(() => {

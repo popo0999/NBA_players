@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Icon } from '@iconify/react'
 
 const Filter = (props) => {
-	const { data, setSelectTeam, selectTeam, setSearchText, searchText, setSearch } = props
+	const {
+		data,
+		setSelectTeam,
+		selectTeam,
+		setSearchText,
+		searchText,
+		setSearch,
+		search,
+	} = props
 	let teamAll = []
 
 	// 先將每個人的球隊抓出來
@@ -14,9 +22,10 @@ const Filter = (props) => {
 	const teamName = teamAll.filter((v, i, arr) => {
 		return arr.indexOf(v) === i
 	})
-	const mySubmit = (e) => {
+	const mySubmit = async (e) => {
 		setSearch(true)
-		e.preventDefault()
+		await e.preventDefault()
+		await setSearch(false)
 	}
 
 	return (
@@ -41,7 +50,7 @@ const Filter = (props) => {
 						})}
 					</select>
 				</div>
-				<form className="keyword">
+				<form className="keyword" onSubmit={mySubmit}>
 					<input
 						type="text"
 						value={searchText}
@@ -49,7 +58,7 @@ const Filter = (props) => {
 						className="searchInput"
 						placeholder="search here"
 					/>
-					<button className="noStyleInButton p-0" onClick={mySubmit}>
+					<button className="noStyleInButton p-0">
 						<Icon icon="carbon:search" width="22" />
 					</button>
 				</form>

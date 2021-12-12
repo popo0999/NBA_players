@@ -5,6 +5,7 @@ import data from './players.json'
 
 // page
 import PlayerList from './pages/PlayerList'
+import Team from './pages/Team'
 
 const App = () => {
 	return (
@@ -16,6 +17,10 @@ const App = () => {
 						<PlayerList data={data} />
 					</Route>
 					<Route exact path="/NBA_players">
+						<PlayerList data={data} />
+					</Route>
+					<Route exact path="/NBA_team">
+						<Team />
 						<PlayerList data={data} />
 					</Route>
 				</Switch>
