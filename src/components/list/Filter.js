@@ -22,10 +22,10 @@ const Filter = (props) => {
 	const teamName = teamAll.filter((v, i, arr) => {
 		return arr.indexOf(v) === i
 	})
-	const mySubmit = async (e) => {
-		setSearch(true)
-		await e.preventDefault()
-		await setSearch(false)
+
+	const mySubmit = (e) => {
+		setSearch(!search)
+		e.preventDefault()
 	}
 
 	return (
