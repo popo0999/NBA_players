@@ -19,6 +19,7 @@ const List = (props) => {
 	const [selectedPlayer, setSelectedPlayer] = useState('')
 	const [selectedPlayerData, setSelectedPlayerData] = useState([])
 	const [sortBy, setSortBy] = useState('points')
+	const [sorting, setSorting] = useState(false)
 	const [show, setShow] = useState(false)
 	const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
@@ -38,24 +39,44 @@ const List = (props) => {
 	}
 	const handleSort = (data, sortBy) => {
 		let newData = [...data]
-
-		if (sortBy === 'games') {
-			newData = [...newData].sort((a, b) => b.games_played - a.games_played)
-		}
-		if (sortBy === 'points') {
-			newData = [...newData].sort((a, b) => b.points_per_game - a.points_per_game)
-		}
-		if (sortBy === 'steals') {
-			newData = [...newData].sort((a, b) => b.steals_per_game - a.steals_per_game)
-		}
-		if (sortBy === 'rebounds') {
-			newData = [...newData].sort((a, b) => b.rebounds_per_game - a.rebounds_per_game)
-		}
-		if (sortBy === 'blocks') {
-			newData = [...newData].sort((a, b) => b.blocks_per_game - a.blocks_per_game)
-		}
-		if (sortBy === 'assists') {
-			newData = [...newData].sort((a, b) => b.assists_per_game - a.assists_per_game)
+		if (sorting) {
+			if (sortBy === 'games') {
+				newData = [...newData].sort((a, b) => a.games_played - b.games_played)
+			}
+			if (sortBy === 'points') {
+				newData = [...newData].sort((a, b) => a.points_per_game - b.points_per_game)
+			}
+			if (sortBy === 'steals') {
+				newData = [...newData].sort((a, b) => a.steals_per_game - b.steals_per_game)
+			}
+			if (sortBy === 'rebounds') {
+				newData = [...newData].sort((a, b) => a.rebounds_per_game - b.rebounds_per_game)
+			}
+			if (sortBy === 'blocks') {
+				newData = [...newData].sort((a, b) => a.blocks_per_game - b.blocks_per_game)
+			}
+			if (sortBy === 'assists') {
+				newData = [...newData].sort((a, b) => a.assists_per_game - b.assists_per_game)
+			}
+		} else {
+			if (sortBy === 'games') {
+				newData = [...newData].sort((a, b) => b.games_played - a.games_played)
+			}
+			if (sortBy === 'points') {
+				newData = [...newData].sort((a, b) => b.points_per_game - a.points_per_game)
+			}
+			if (sortBy === 'steals') {
+				newData = [...newData].sort((a, b) => b.steals_per_game - a.steals_per_game)
+			}
+			if (sortBy === 'rebounds') {
+				newData = [...newData].sort((a, b) => b.rebounds_per_game - a.rebounds_per_game)
+			}
+			if (sortBy === 'blocks') {
+				newData = [...newData].sort((a, b) => b.blocks_per_game - a.blocks_per_game)
+			}
+			if (sortBy === 'assists') {
+				newData = [...newData].sort((a, b) => b.assists_per_game - a.assists_per_game)
+			}
 		}
 
 		return newData
@@ -93,7 +114,7 @@ const List = (props) => {
 		newData = handlePage(newData, whichPage)
 		setDisplay(newData)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [search, selectTeam, sortBy, whichPage])
+	}, [search, selectTeam, sortBy, whichPage, sorting])
 
 	// player's Detail資料
 	useEffect(() => {
@@ -116,6 +137,7 @@ const List = (props) => {
 									className={'pointer changeBgc'}
 									onClick={(e) => {
 										setSortBy(v)
+										setSorting(!sorting)
 									}}
 									key={v}
 								>
@@ -127,6 +149,7 @@ const List = (props) => {
 									className={'pointer'}
 									onClick={(e) => {
 										setSortBy(v)
+										setSorting(false)
 									}}
 									key={v}
 								>
@@ -176,7 +199,7 @@ const List = (props) => {
 					{selectedPlayerData.length > 0 &&
 						selectedPlayerData.map((v) => {
 							return (
-								<>
+								<div key={v.name}>
 									<h5>球員能力值</h5>
 									<p>將該數據以全數據的百分等級呈現</p>
 									<PlayerCharts data={selectedPlayerData} rawData={rawData} />
@@ -228,7 +251,7 @@ const List = (props) => {
 											<p>{v.player_efficiency_rating}</p>
 										</div>
 									</div>
-								</>
+								</div>
 							)
 						})}
 				</Modal.Body>
