@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/NBA_players/static/css/main.debd41c7.chunk.css",
-    "main.js": "/NBA_players/static/js/main.0f5e32ed.chunk.js",
-    "main.js.map": "/NBA_players/static/js/main.0f5e32ed.chunk.js.map",
+    "main.js": "/NBA_players/static/js/main.cf947bad.chunk.js",
+    "main.js.map": "/NBA_players/static/js/main.cf947bad.chunk.js.map",
     "runtime-main.js": "/NBA_players/static/js/runtime-main.3993163f.js",
     "runtime-main.js.map": "/NBA_players/static/js/runtime-main.3993163f.js.map",
-    "static/js/2.6668fc28.chunk.js": "/NBA_players/static/js/2.6668fc28.chunk.js",
-    "static/js/2.6668fc28.chunk.js.map": "/NBA_players/static/js/2.6668fc28.chunk.js.map",
+    "static/js/2.f8977aff.chunk.js": "/NBA_players/static/js/2.f8977aff.chunk.js",
+    "static/js/2.f8977aff.chunk.js.map": "/NBA_players/static/js/2.f8977aff.chunk.js.map",
     "index.html": "/NBA_players/index.html",
     "static/css/main.debd41c7.chunk.css.map": "/NBA_players/static/css/main.debd41c7.chunk.css.map",
-    "static/js/2.6668fc28.chunk.js.LICENSE.txt": "/NBA_players/static/js/2.6668fc28.chunk.js.LICENSE.txt",
+    "static/js/2.f8977aff.chunk.js.LICENSE.txt": "/NBA_players/static/js/2.f8977aff.chunk.js.LICENSE.txt",
     "static/media/NBA.c3ad14c1.png": "/NBA_players/static/media/NBA.c3ad14c1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3993163f.js",
-    "static/js/2.6668fc28.chunk.js",
+    "static/js/2.f8977aff.chunk.js",
     "static/css/main.debd41c7.chunk.css",
-    "static/js/main.0f5e32ed.chunk.js"
+    "static/js/main.cf947bad.chunk.js"
   ]
 }
